@@ -10,17 +10,14 @@ END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[iCount := iCount + 1;
 
-// reset logic
-IF iCount > 100 THEN
-    iCount := 0;
-END_IF
-
 // new Light/Switch logic
 IF iCount > 50 THEN
     bLight := bSwitch;
 ELSE
     bLight := FALSE;
-END_IF]]></ST>
+END_IF
+
+]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>
