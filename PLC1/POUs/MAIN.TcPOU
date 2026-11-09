@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <POU Name="MAIN" Id="{a48d85b8-1883-40f5-b698-0e9758ed2b9e}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR
+    iCount : INT;
+    bLight : BOOL;
+    bSwitch : BOOL;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[iCount := iCount + 1;
+
+// reset logic
+IF iCount > 100 THEN
+    iCount := 0;
+END_IF
+
+// new Light/Switch logic
+IF iCount > 50 THEN
+    bLight := bSwitch;
+ELSE
+    bLight := FALSE;
+END_IF]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>
